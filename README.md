@@ -1,6 +1,6 @@
 ## CloudFormation Macro examples
 
-This repository contains some example code to pair with [this blog post on CloudFormatiton macros](https://alexdebrie.com/posts/cloudformation-macros/).
+This repository contains some example code to pair with [this blog post on CloudFormation macros](https://alexdebrie.com/posts/cloudformation-macros/).
 
 It includes two macros:
 

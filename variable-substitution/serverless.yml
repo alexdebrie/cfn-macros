@@ -1,0 +1,22 @@
+service: variable-substitution 
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: dev
+  region: us-east-1
+
+functions:
+  variableSubstitution:
+    handler: handler.variable_substitution
+
+resources:
+  Resources:
+    VariableSubstitutionMacro:
+      Type: AWS::CloudFormation::Macro
+      Properties:
+        Name: VariableSubstitution
+        FunctionName:
+          Fn::GetAtt:
+            - VariableSubstitutionLambdaFunction
+            - Arn

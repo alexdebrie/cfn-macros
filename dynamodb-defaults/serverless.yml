@@ -1,0 +1,22 @@
+service: dynamodb-defaults 
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: dev
+  region: us-east-1
+
+functions:
+  dynamodbDefaults:
+    handler: handler.dynamodb_defaults
+
+resources:
+  Resources:
+    VariableSubstitutionMacro:
+      Type: AWS::CloudFormation::Macro
+      Properties:
+        Name: DynamoDBDefaults
+        FunctionName:
+          Fn::GetAtt:
+            - DynamodbDefaultsLambdaFunction
+            - Arn

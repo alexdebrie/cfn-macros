@@ -1,0 +1,12 @@
+Resources:
+  MyNewTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: 'MyNewTable'
+      KeySchema:
+        - AttributeName: key
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: key
+          AttributeType: S
+      Fn::Transform: DynamoDBDefaults

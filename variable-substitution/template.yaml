@@ -1,0 +1,15 @@
+Parameters: 
+  stage: 
+    Type: String
+    Default: dev
+    AllowedValues: 
+      - dev
+      - staging
+      - prod
+Resources:
+  MySNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: "MyTopic-{stage}" # <-- Look Ma, Python templating!
+Transform:
+  - VariableSubstitution
